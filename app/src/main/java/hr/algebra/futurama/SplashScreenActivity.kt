@@ -6,11 +6,10 @@ import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 import hr.algebra.futurama.databinding.ActivitySplashScreenBinding
-import hr.algebra.futurama.framework.startActivity
-
-import hr.algebra.futurama.framework.startAnimation
+import hr.algebra.futurama.framework.*
 
 private const val DELAY = 3000L
+const val DATA_IMPORTED = "hr.algebra.futurama.data_imported"
 
 class SplashScreenActivity : AppCompatActivity() {
 
@@ -30,11 +29,20 @@ class SplashScreenActivity : AppCompatActivity() {
     }
 
     private fun redirect() {
-        Handler(Looper.getMainLooper()).postDelayed(
-            {
-                startActivity<HostActivity>()
+        if (getBooleanPreference(DATA_IMPORTED)) {
+            callDelayed(DELAY) { startActivity<HostActivity>() }
+        } else {
+            if (isOnline()) {
+                Intent(this, FuturamaService::class.java).apply {
+                    FuturamaService.enqueue(
+                        this@SplashScreenActivity,
+                        this
+                    )
+                }
+            } else {
+                binding.tvSplash.text = getString(R.string.no_internet)
+                callDelayed(DELAY) { finish() }
             }
-            , DELAY
-        )
+        }
     }
 }
