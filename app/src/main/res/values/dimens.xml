@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="splashPadding">50dp</dimen>
-    <dimen name="splashPadding">50dp</dimen>
+    <dimen name="ivSplashHeight">400dp</dimen>
+    <dimen name="splashTextSize">50sp</dimen>
 </resources>
