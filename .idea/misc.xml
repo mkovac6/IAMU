@@ -4,7 +4,15 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/marko/Desktop/IAMU_Futurama/app/src/main/res/layout/activity_splash_screen.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/marko/Desktop/IAMU_FuturamaProject/app/src/main/res/drawable/navigation_text_color.xml" value="0.204" />
+        <entry key="..\:/Users/marko/Desktop/IAMU_FuturamaProject/app/src/main/res/drawable/navitagion_text_color.xml" value="0.204" />
+        <entry key="..\:/Users/marko/Desktop/IAMU_FuturamaProject/app/src/main/res/layout/activity_host.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/marko/Desktop/IAMU_FuturamaProject/app/src/main/res/layout/activity_splash_screen.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/marko/Desktop/IAMU_FuturamaProject/app/src/main/res/layout/fragment_about.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/marko/Desktop/IAMU_FuturamaProject/app/src/main/res/layout/fragment_items.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/marko/Desktop/IAMU_FuturamaProject/app/src/main/res/layout/navigation_header.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/marko/Desktop/IAMU_FuturamaProject/app/src/main/res/menu/host_menu.xml" value="0.365625" />
+        <entry key="..\:/Users/marko/Desktop/IAMU_FuturamaProject/app/src/main/res/menu/navigation_menu.xml" value="0.365625" />
       </map>
     </option>
   </component>
