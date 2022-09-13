@@ -10,4 +10,9 @@
     <dimen name="nvHeight">240dp</dimen>
     <dimen name="paddingMain">20dp</dimen>
     <dimen name="textSizeAbout">50sp</dimen>
+    <dimen name="paddingItems">10dp</dimen>
+    <dimen name="ivSize">50dp</dimen>
+    <dimen name="textSizeItems">20sp</dimen>
+    <dimen name="marginLeftItems">20dp</dimen>
+    <dimen name="cornerRadius">9dp</dimen>
 </resources>

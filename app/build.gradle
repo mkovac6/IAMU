@@ -37,6 +37,10 @@ android {
 
 dependencies {
 
+    //picasso picture implementation
+    implementation 'com.squareup.picasso:picasso:2.8'
+    implementation 'jp.wasabeef:picasso-transformations:2.4.0'
+
     //api implementation
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.google.code.gson:gson:2.8.9'

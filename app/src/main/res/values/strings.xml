@@ -9,4 +9,5 @@
     <string name="cancel">Cancel</string>
     <string name="ok">Ok</string>
     <string name="futuramaAbout">Aplikaciju napravio Marko Kovačević za Visoko Učilište Algebra.</string>
+    <string name="item_example_text">Futurama character EXAMPLE</string>
 </resources>

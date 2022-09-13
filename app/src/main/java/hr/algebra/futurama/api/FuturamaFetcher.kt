@@ -67,7 +67,7 @@ class FuturamaFetcher(private val context: Context) {
                 }
                 context.contentResolver.insert(FUTURAMA_PROVIDER_URI, values)
             }
-            context.setBooleanPreference(DATA_IMPORTED, true)
+            //context.setBooleanPreference(DATA_IMPORTED, true)
             context.sendBroadcast<FuturamaReceiver>()
         }
     }

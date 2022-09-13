@@ -12,6 +12,8 @@ import android.view.View
 import android.view.animation.AnimationUtils
 import androidx.core.content.getSystemService
 import androidx.preference.PreferenceManager
+import hr.algebra.futurama.FUTURAMA_PROVIDER_URI
+import hr.algebra.futurama.model.Item
 
 fun View.startAnimation(animationId: Int) =
     startAnimation(AnimationUtils.loadAnimation(context, animationId))
@@ -50,4 +52,23 @@ fun callDelayed(delay: Long, function: Runnable) {
         function,
         delay
     )
+}
+
+fun Context.fetchItems(): MutableList<Item> {
+    val items = mutableListOf<Item>()
+    val cursor = contentResolver?.query(FUTURAMA_PROVIDER_URI, null, null, null, null)
+    while (cursor != null && cursor.moveToNext()) {
+        items.add(
+            Item(
+                cursor.getLong(cursor.getColumnIndexOrThrow(Item::_id.name)),
+                cursor.getString(cursor.getColumnIndexOrThrow(Item::Species.name)),
+                cursor.getString(cursor.getColumnIndexOrThrow(Item::Age.name)),
+                cursor.getString(cursor.getColumnIndexOrThrow(Item::Planet.name)),
+                cursor.getString(cursor.getColumnIndexOrThrow(Item::PicUrl.name)),
+                cursor.getString(cursor.getColumnIndexOrThrow(Item::Name.name)),
+                cursor.getInt(cursor.getColumnIndexOrThrow(Item::read.name)) == 1
+            )
+        )
+    }
+    return items
 }

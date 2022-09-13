@@ -9,7 +9,11 @@ import java.nio.file.Files
 import java.nio.file.Paths
 
 fun downloadImageAndStore(context: Context, picUrl: String, fileName: String): String? {
-    val ext = picUrl.substring(picUrl.lastIndexOf("."))
+    val index = picUrl.lastIndexOf(".")
+    var ext = ".png"
+    if (index != -1) {
+        ext = picUrl.substring(index, index + 4)
+    }
     val file: File = createFile(context, fileName, ext)
     try {
         val con: HttpURLConnection = createGetHttpUrlConnection(picUrl)

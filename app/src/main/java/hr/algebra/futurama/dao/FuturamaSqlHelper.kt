@@ -15,12 +15,12 @@ private const val ITEMS = "items"
 private val CREATE =
     "create table $ITEMS(" +
             "${Item::_id.name} integer primary key autoincrement, " +
-            "${Item::Species.name}text not null, " +
-            "${Item::Age.name}text not null, " +
-            "${Item::Planet.name}text not null, " +
-            "${Item::PicUrl.name}text not null, " +
-            "${Item::Name.name}text not null, " +
-            "${Item::read.name}integer not null " +
+            "${Item::Species.name} text not null, " +
+            "${Item::Age.name} text not null, " +
+            "${Item::Planet.name} text not null, " +
+            "${Item::PicUrl.name} text not null, " +
+            "${Item::Name.name} text not null, " +
+            "${Item::read.name} integer not null " +
             ")"
 
 private const val DROP = "drop table $ITEMS"
@@ -46,7 +46,11 @@ class FuturamaSqlHelper(
         selectionArgs: Array<String>?
     ) = writableDatabase.update(ITEMS, values, selection, selectionArgs)
 
-    override fun insert(values: ContentValues?) = writableDatabase.insert(ITEMS, null, values)
+    override fun insert(values: ContentValues?): Long {
+        val _id = writableDatabase
+            .insert(ITEMS, null, values)
+        return _id
+    }
 
     override fun query(
         projection: Array<String>?, selection: String?,
