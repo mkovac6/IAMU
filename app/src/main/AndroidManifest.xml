@@ -16,10 +16,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Futurama"
         tools:targetApi="31">
+        <provider
+            android:name=".FuturamaProvider"
+            android:authorities="hr.algebra.futurama.api.provider"
+            android:enabled="true"
+            android:exported="false"></provider>
+
         <receiver
             android:name=".FuturamaReceiver"
             android:enabled="true"
-            android:exported="false"></receiver>
+            android:exported="false" />
 
         <service
             android:name=".FuturamaService"
