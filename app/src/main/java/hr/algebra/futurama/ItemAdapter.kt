@@ -1,11 +1,13 @@
 package hr.algebra.futurama
 
+import android.content.ContentUris
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import hr.algebra.futurama.model.Item
@@ -34,7 +36,35 @@ class ItemAdapter(private val context: Context, private val items: MutableList<I
     )
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.itemView.setOnClickListener {
+
+        }
+        holder.itemView.setOnLongClickListener {
+            AlertDialog.Builder(context).apply {
+                setTitle(R.string.delete)
+                setMessage(context.getString(R.string.sure) + " '${items[position].Name}'?")
+                setIcon(R.drawable.delete)
+                setCancelable(true)
+                setNegativeButton(R.string.cancel, null)
+                setPositiveButton("Ok") { _, _ -> deleteItem(position) }
+
+                show()
+            }
+            true
+        }
         holder.bind(items[position])
+    }
+
+    private fun deleteItem(position: Int) {
+        val item = items[position]
+        context.contentResolver.delete(
+            ContentUris.withAppendedId(FUTURAMA_PROVIDER_URI, item._id!!),
+            null,
+            null
+        )
+        File(item.PicUrl)
+        items.removeAt(position)
+        notifyDataSetChanged()
     }
 
     override fun getItemCount() = items.size

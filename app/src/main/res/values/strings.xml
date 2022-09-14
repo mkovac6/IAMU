@@ -10,4 +10,6 @@
     <string name="ok">Ok</string>
     <string name="futuramaAbout">Aplikaciju napravio Marko Kovačević za Visoko Učilište Algebra.</string>
     <string name="item_example_text">Futurama character EXAMPLE</string>
+    <string name="delete">Delete</string>
+    <string name="sure">Are you sure you want to delete?</string>
 </resources>
