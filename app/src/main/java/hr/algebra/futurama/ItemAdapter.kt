@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
+import hr.algebra.futurama.framework.startActivity
 import hr.algebra.futurama.model.Item
 import jp.wasabeef.picasso.transformations.RoundedCornersTransformation
 import java.io.File
@@ -37,7 +38,7 @@ class ItemAdapter(private val context: Context, private val items: MutableList<I
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.itemView.setOnClickListener {
-
+            context.startActivity<ItemPagerActivity>(ITEM_POSITION, position)
         }
         holder.itemView.setOnLongClickListener {
             AlertDialog.Builder(context).apply {
